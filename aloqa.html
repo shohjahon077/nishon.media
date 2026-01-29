@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nishon.media | Bog'lanish</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .nav-blur { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        
+        /* Navbar elementlari bir xil bo'lishi uchun */
+        #mobile-menu { transition: transform 0.6s cubic-bezier(1, 0, 0, 1); transform: translateY(-100%); }
+        #mobile-menu.active { transform: translateY(0); }
+
+        /* Kontakt kartalari - Xizmatlar bo'limi stili bilan bir xil */
+        .contact-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .contact-card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px -12px rgba(220, 38, 38, 0.15); }
+
+        /* Yo'riqnoma animatsiyasi */
+        @keyframes pointerBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .guide-anim { animation: pointerBounce 1s infinite; }
+    </style>
+</head>
+<body class="bg-[#fcfcfc] text-black overflow-x-hidden" onclick="dismissGuide()">
+
+    <div id="site-guide" class="fixed top-24 right-8 z-[150] opacity-0 transition-opacity duration-700 pointer-events-none">
+        <div class="bg-black text-white px-5 py-3 rounded-2xl shadow-2xl flex flex-col items-center border border-white/10">
+            <span class="text-[10px] font-bold uppercase tracking-widest mb-1 text-red-600">Aloqaga chiqing</span>
+            <i class="fas fa-arrow-up text-white guide-anim"></i>
+        </div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-[100] nav-blur border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 md:h-24 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-black tracking-tighter uppercase">NISHON<span class="text-red-600">.MEDIA</span></a>
+            
+            <div class="hidden md:flex items-center space-x-10 text-[11px] font-extrabold uppercase tracking-[2px]">
+                <a href="index.html" class="hover:text-red-600 transition">Asosiy</a>
+                <a href="buyurtma.html" class="hover:text-red-600 transition">Buyurtma</a>
+                 <a href="portfolio.html" class="text-red-600">Portfolio</a>
+                <a href="#contac" class="text-red-600 border-b-2 border-red-600 pb-1">Bog'lanish</a>
+            </div>
+
+            <button onclick="toggleMenu(event)" class="md:hidden flex flex-col gap-1.5 p-2">
+                <span id="b1" class="w-8 h-0.5 bg-black transition-all"></span>
+                <span id="b2" class="w-5 h-0.5 bg-red-600 transition-all ml-auto"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[120] md:hidden flex flex-col justify-center px-10 text-center">
+        <button onclick="toggleMenu()" class="absolute top-8 right-8 text-4xl">&times;</button>
+        <div class="flex flex-col space-y-10 text-5xl font-black tracking-tighter">
+            <a href="index.html" onclick="toggleMenu()">Asosiy</a>
+            <a href="buyurtma.html" onclick="toggleMenu()">Buyurtma</a>
+            <a href="portfoil.html" onclick="toggleMenu()">Portfolio</a>
+            <a href="#contact" onclick="toggleMenu()" class="text-red-600">Aloqa</a>
+        </div>
+    </div>
+
+    <section id="contact" class="min-h-screen pt-32 md:pt-48 pb-20 px-6 bg-[#fcfcfc]">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="max-w-3xl mb-20" data-aos="fade-right">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-10 h-[2px] bg-red-600"></span>
+                    <span class="text-xs font-bold uppercase tracking-[4px] text-red-600">Kontaktlarimiz</span>
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter mb-8 uppercase">
+                    BIZ BILAN <br> <span class="italic text-gray-300">BOG'LANING.</span>
+                </h1>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <a href="https://instagram.com/nishon.media" target="_blank" class="contact-card p-10 bg-white rounded-[3rem] border border-gray-100 shadow-sm flex flex-col items-center text-center" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-red-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-8 shadow-lg shadow-red-100">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-2 uppercase">Instagram</h3>
+                    <p class="text-gray-400 font-bold tracking-widest text-xs">@nishon.media</p>
+                </a>
+
+                <a href="https://t.me/Nishinmedia0" target="_blank" class="contact-card p-10 bg-white rounded-[3rem] border border-gray-100 shadow-sm flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center text-2xl mb-8">
+                        <i class="fab fa-telegram-plane"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-2 uppercase text-red-600">Telegram</h3>
+                    <p class="text-gray-400 font-bold tracking-widest text-xs">@Nishinmedia0</p>
+                </a>
+
+                <a href="tel:881099992" class="contact-card p-10 bg-white rounded-[3rem] border border-gray-100 shadow-sm flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gray-100 text-black rounded-2xl flex items-center justify-center text-2xl mb-8">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-2 uppercase">Operator</h3>
+                    <p class="text-gray-400 font-bold tracking-widest text-xs">88 109 99 92</p>
+                </a>
+
+            </div>
+
+            <div class="mt-20 text-center md:text-left" data-aos="fade-up">
+                <a href="index.html" class="inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[3px] text-gray-400 hover:text-red-600 transition">
+                    <i class="fas fa-long-arrow-alt-left text-lg"></i>
+                    ASOSIY SAHIFAGA QAYTISH
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-gray-50 bg-white px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-xl font-black tracking-tighter uppercase italic">NISHON<span class="text-red-600">.</span></div>
+            <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[3px] text-gray-400">
+                <i class="fas fa-shield-alt text-green-500"></i>
+                <span>Sayt xavfsizligi kafolatlangan &copy; 2026</span>
+            </div>
+            <p class="text-gray-300 text-[9px] font-bold uppercase tracking-widest">Aniq nishon — Yuksak natija.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Guide logic
+        window.addEventListener('load', () => {
+            const guide = document.getElementById('site-guide');
+            setTimeout(() => {
+                guide.style.opacity = '1';
+                setTimeout(() => guide.style.opacity = '0', 3500);
+            }, 1000);
+        });
+
+        function dismissGuide() {
+            document.getElementById('site-guide').style.opacity = '0';
+        }
+
+        // Navbar burger logic
+        function toggleMenu(e) {
+            if(e) e.stopPropagation();
+            const m = document.getElementById('mobile-menu');
+            const b1 = document.getElementById('b1');
+            const b2 = document.getElementById('b2');
+            m.classList.toggle('active');
+            if(m.classList.contains('active')) {
+                b1.style.transform = "rotate(45deg) translateY(6px)";
+                b2.style.transform = "rotate(-45deg) translateY(-6px)";
+                b2.style.width = "32px";
+                document.body.style.overflow = "hidden";
+            } else {
+                b1.style.transform = "none";
+                b2.style.transform = "none";
+                b2.style.width = "20px";
+                document.body.style.overflow = "auto";
+            }
+        }
+    </script>
+</body>
+</html>

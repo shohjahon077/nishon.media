@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishon.media | Mukammal Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #fcfcfc; overflow-x: hidden; }
+        .nav-blur { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        
+        /* Tab kontenti animatsiyasi */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* Tugmalar uchun stil */
+        .filter-btn { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .filter-btn.active { background: #dc2626; color: #fff; border-color: #dc2626; box-shadow: 0 10px 20px rgba(220, 38, 38, 0.2); }
+
+        /* Mobil menyu */
+        #mobile-menu { transition: transform 0.6s cubic-bezier(1, 0, 0, 1); transform: translateY(-100%); }
+        #mobile-menu.active { transform: translateY(0); }
+
+        /* Karta animatsiyalari */
+        .glass-card { transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.05); }
+        .glass-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 w-full z-[100] nav-blur border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-black tracking-tighter uppercase">NISHON<span class="text-red-600">.MEDIA</span></a>
+            
+            <div class="hidden md:flex items-center space-x-10 text-[11px] font-extrabold uppercase tracking-[2px]">
+                <a href="index.html" class="hover:text-red-600 transition">Asosiy</a>
+                <a href="buyurtma.html" class="hover:text-red-600 transition">Buyurtma</a>
+                <a href="portfolio.html" class="text-red-600 border-b-2 border-red-600">Portfolio</a>
+                <a href="aloqa.html" class="hover:text-red-600 transition">Aloqa</a>
+            </div>
+
+            <button onclick="toggleMenu()" class="md:hidden flex flex-col gap-1.5 p-2">
+                <span class="w-8 h-0.5 bg-black"></span>
+                <span class="w-5 h-0.5 bg-red-600 ml-auto"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[120] md:hidden flex flex-col justify-center px-10 text-center">
+        <button onclick="toggleMenu()" class="absolute top-8 right-8 text-4xl">&times;</button>
+        <div class="flex flex-col space-y-8 text-4xl font-black tracking-tighter uppercase">
+            <a href="index.html">Asosiy</a>
+            <a href="buyurtma.html" class="hover:text-red-600 transition">Buyurtma</a>
+            <a href="portfolio.html" class="text-red-600">Portfolio</a>
+            <a href="aloqa.html">Aloqa</a>
+        </div>
+    </div>
+
+    <header class="pt-40 pb-12 px-6 max-w-7xl mx-auto" data-aos="fade-down">
+        <h1 class="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-[0.8] mb-12">
+            BIZNING <br> <span class="italic text-gray-200">ISHlarimiz.</span>
+        </h1>
+
+        <div class="flex flex-wrap gap-4 overflow-x-auto pb-4 no-scrollbar">
+            <button onclick="openTab(event, 'web')" class="filter-btn active border-2 border-black px-10 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest whitespace-nowrap">Web Saytlar</button>
+            <button onclick="openTab(event, 'media')" class="filter-btn border-2 border-black px-10 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest whitespace-nowrap">Mobilografiya</button>
+            <button onclick="openTab(event, 'smm')" class="filter-btn border-2 border-black px-10 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest whitespace-nowrap">SMM & Target</button>
+            <button onclick="openTab(event, 'design')" class="filter-btn border-2 border-black px-10 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest whitespace-nowrap">Grafik Dizayn</button>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pb-32">
+        
+        <div id="web" class="tab-content active">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="glass-card bg-white p-8 rounded-[3rem]" data-aos="fade-up">
+                    <span class="text-red-600 font-bold text-[9px] uppercase tracking-widest">SMM Expert Platform</span>
+                    <h3 class="text-3xl font-black uppercase mt-2 mb-4">Sultonov SMM</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">SMM mutaxassisining shaxsiy brendi uchun yaratilgan. Saytda portfolio, xizmatlar turlari va mijozlar uchun qulay ariza qoldirish tizimi mavjud.</p>
+                    <a href="https://sultonov-smm.vercel.app/" target="_blank" class="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-xl font-bold uppercase text-[9px] hover:bg-red-600 transition">Saytni ochish <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <div class="glass-card bg-white p-8 rounded-[3rem]" data-aos="fade-up" data-aos-delay="100">
+                    <span class="text-red-600 font-bold text-[9px] uppercase tracking-widest">E-Commerce Store</span>
+                    <h3 class="text-3xl font-black uppercase mt-2 mb-4">Miel E-Beauty</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Zamonaviy kosmetika do'koni. Foydalanuvchilar mahsulotlarni tanlashi, savatchaga qo'shishi va Telegram orqali buyurtma berishi mumkin.</p>
+                    <a href="https://miel-ebeauty.vercel.app/" target="_blank" class="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-xl font-bold uppercase text-[9px] hover:bg-red-600 transition">Saytni ochish <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <div class="glass-card bg-white p-8 rounded-[3rem]" data-aos="fade-up">
+                    <span class="text-red-600 font-bold text-[9px] uppercase tracking-widest">Blogger Portfolio</span>
+                    <h3 class="text-3xl font-black uppercase mt-2 mb-4">Ferka Veka V1</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Bloggerning shaxsiy hayoti va faoliyati haqida ma'lumot beruvchi vizual jihatdan boyitilgan platforma.</p>
+                    <a href="https://ferkaveka.vercel.app/" target="_blank" class="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-xl font-bold uppercase text-[9px] hover:bg-red-600 transition">Saytni ochish <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <div class="glass-card bg-white p-8 rounded-[3rem]" data-aos="fade-up" data-aos-delay="100">
+                    <span class="text-red-600 font-bold text-[9px] uppercase tracking-widest">Digital Products</span>
+                    <h3 class="text-3xl font-black uppercase mt-2 mb-4">Ferka Veka V2</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Ferka Veka loyihasining ikkinchi qismi bo'lib, u asosan raqamli mahsulotlar va kurslarni sotishga ixtisoslashgan.</p>
+                    <a href="https://ferka-six.vercel.app/" target="_blank" class="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-xl font-bold uppercase text-[9px] hover:bg-red-600 transition">Saytni ochish <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <div class="glass-card bg-white p-8 rounded-[3rem]" data-aos="fade-up">
+                    <span class="text-red-600 font-bold text-[9px] uppercase tracking-widest">Personal Web-Card</span>
+                    <h3 class="text-3xl font-black uppercase mt-2 mb-4">Sobir Official</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Blogger Sobir uchun maxsus yaratilgan vizitka-sayt. Minimalizm va tezlikka asoslangan loyiha.</p>
+                    <a href="https://Sobir.vercel.app" target="_blank" class="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-xl font-bold uppercase text-[9px] hover:bg-red-600 transition">Saytni ochish <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <div class="glass-card bg-white p-8 rounded-[3rem]" data-aos="fade-up" data-aos-delay="100">
+                    <span class="text-red-600 font-bold text-[9px] uppercase tracking-widest">Media Agency Site</span>
+                    <h3 class="text-3xl font-black uppercase mt-2 mb-4">Ayubxon Media</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Mobilografiya xizmatlarini taqdim etuvchi agentlik sayti. Videolarni joylash uchun qulay interfeysga ega.</p>
+                    <a href="https://Ayubxon.vercel.app" target="_blank" class="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-xl font-bold uppercase text-[9px] hover:bg-red-600 transition">Saytni ochish <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <div class="glass-card bg-white p-8 rounded-[3rem] md:col-span-2" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div>
+                            <span class="text-red-600 font-bold text-[9px] uppercase tracking-widest">Budget E-Commerce</span>
+                            <h3 class="text-3xl font-black uppercase mt-2 mb-4">Ayollar Libosi (Eng arzon)</h3>
+                            <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-xl">Ayollar kiyimlari do'koni uchun yaratilgan platforma. Saytning asosiy ustunligi — juda yuqori yuklanish tezligi va mobil qurilmalarga mukammal moslashganligi.</p>
+                        </div>
+                        <a href="https://ayollar-libosi.vercel.app" target="_blank" class="bg-black text-white px-10 py-5 rounded-2xl font-black uppercase text-[10px] hover:bg-red-600 transition shadow-xl">Do'konga o'tish</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="media" class="tab-content">
+            <div class="bg-black text-white p-12 md:p-24 rounded-[4rem]" data-aos="zoom-in">
+                <div class="max-w-3xl">
+                    <h2 class="text-5xl md:text-8xl font-black uppercase mb-10 leading-tight text-red-600">4K <br> <span class="text-white italic">VISUALS.</span></h2>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold uppercase border-b border-white/20 pb-2">Texnik Sifat</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">Barcha suratga olish ishlari eng so'nggi rusumdagi smartfon va stabilizatorlarda, professional yoritish tizimi bilan amalga oshiriladi. Natija — 4K 60FPS.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold uppercase border-b border-white/20 pb-2">Tajriba</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">Biz 50 dan ortiq tijoriy loyihalarda ishtirok etganmiz. Restoranlar, avtosalonlar va shaxsiy bloglar uchun kreativ montaj (Color Grading, Sound Design) xizmatlarini ko'rsatamiz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="smm" class="tab-content">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-10 rounded-[3rem] border border-gray-100" data-aos="fade-right">
+                    <i class="fas fa-bullseye text-4xl text-red-600 mb-6"></i>
+                    <h4 class="text-2xl font-black uppercase mb-4">Targeting</h4>
+                    <p class="text-gray-500 text-sm">Reklamani aniq nishonga yo'naltiramiz. Mijozlar oqimi va sotuv hajmini oshirish kafolatlangan.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[3rem] border border-gray-100" data-aos="fade-up">
+                    <i class="fas fa-pen-nib text-4xl text-red-600 mb-6"></i>
+                    <h4 class="text-2xl font-black uppercase mb-4">Copywriting</h4>
+                    <p class="text-gray-500 text-sm">Har bir post uchun sotuvchi va qiziqarli matnlar. Storytelling orqali brendga bo'lgan ishonchni oshiramiz.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[3rem] border border-gray-100" data-aos="fade-left">
+                    <i class="fas fa-chart-line text-4xl text-red-600 mb-6"></i>
+                    <h4 class="text-2xl font-black uppercase mb-4">Analytics</h4>
+                    <p class="text-gray-500 text-sm">Har oy yakunida batafsil hisobot va natijalar tahlili. Strategiyani muntazam yangilab boramiz.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="design" class="tab-content">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="h-64 bg-gray-200 rounded-3xl overflow-hidden" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=500" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"></div>
+                <div class="h-64 bg-gray-200 rounded-3xl overflow-hidden" data-aos="zoom-in" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=500" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"></div>
+                <div class="h-64 bg-red-600 rounded-3xl flex items-center justify-center p-6 text-center" data-aos="zoom-in" data-aos-delay="200">
+                    <p class="text-white font-black uppercase text-xl">Logo & Branding Case Study</p>
+                </div>
+                <div class="h-64 bg-gray-200 rounded-3xl overflow-hidden" data-aos="zoom-in" data-aos-delay="300"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=500" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500"></div>
+            </div>
+            <div class="mt-10 p-10 bg-white rounded-[3rem] border border-gray-100" data-aos="fade-up">
+                <h3 class="text-3xl font-black uppercase mb-6">Grafik Dizayn Yo'nalishi</h3>
+                <p class="text-gray-500 leading-relaxed mb-6">Biz brendingizni vizual jihatdan "qimmat" ko'rsatamiz. Logotiplar, ijtimoiy tarmoqlar uchun dizaynlar, bannerlar va korporativ stil yaratish bizning asosiy ishimizdir. Har bir dizayn brend falsafasiga asoslangan holda tayyorlanadi.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("filter-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+            // Animatsiyani qayta ishlatish
+            AOS.refresh();
+        }
+
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
